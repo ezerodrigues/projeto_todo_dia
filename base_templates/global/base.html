@@ -1,39 +1,38 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo Dia por Mim</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: #faf5f5;
-        }
-        .title-font {
-            font-family: 'Playfair Display', serif;
-        }
-        .navbar-bg {
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(5px);
-        }
-        .main-content {
-            min-height: calc(100vh - 120px);
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'global/css/global.css' %}">
 </head>
-<body class="text-gray-700">
+
+    <!-- Navbar fixa no topo -->
     {% include "partials/navbar.html" %}
 
-    <main class="main-content pt-20 pb-12 px-4 max-w-6xl mx-auto">
-        {% block content %}{% endblock %}
+<body class="text-gray-700 font-primary bg-gray-50">
+    
+    <!-- Conteúdo principal -->
+
+    <main class="pt-20 pb-12 flex-1">
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
     </main>
 
+</body>
+
+    <!-- Rodapé -->
     {% include "partials/footer.html" %}
 
+        <!-- Script do menu mobile -->
     <script>
         const mobileMenuButton = document.querySelector('.mobile-menu-button');
         const mobileMenu = document.querySelector('.mobile-menu');
@@ -48,5 +47,6 @@
             }
         });
     </script>
-</body>
+
+
 </html>
