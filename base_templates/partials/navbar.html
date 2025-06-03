@@ -1,40 +1,42 @@
-<nav class="navbar-bg fixed top-0 w-full z-50">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="flex justify-between items-center h-16">
-            <!-- Logo -->
-            <div class="flex-shrink-0 flex items-center">
-                <a href="#" class="flex items-center">
-                    <i class="fas fa-heart text-xl text-pink-300 mr-2"></i>
-                    <span class="title-font text-xl text-pink-400 font-semibold">Todo Dia por Mim</span>
-                </a>
-            </div>
+<nav class="navbar-bg fixed w-full z-10 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href="{% url 'home:home' %}" class="flex items-center">
+          <i class="fas fa-heart text-xl text-pink-300 mr-2"></i>
+          <span class="title-font text-xl text-pink-400 font-semibold">Todo Dia por Mim</span>
+        </a>
+      </div>
+      
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button class="outline-none mobile-menu-button">
+          <i class="fas fa-bars text-pink-400 text-xl"></i>
+        </button>
+      </div>
+      
+      <!-- Desktop menu -->
+      <div class="hidden md:flex space-x-8">
+        <a href="{% url 'home:home' %}" class="text-pink-500 hover:text-pink-700 px-3 py-2 text-sm font-medium transition duration-300">Início</a>
+        <a href="#" class="text-gray-600 hover:text-pink-500 px-3 py-2 text-sm font-medium transition duration-300">Diário</a>
+        <a href="#" class="text-gray-600 hover:text-pink-500 px-3 py-2 text-sm font-medium transition duration-300">Planner</a>
+        <a href="#" class="text-gray-600 hover:text-pink-500 px-3 py-2 text-sm font-medium transition duration-300">Registro</a>
+        <a href="{% url 'users:login' %}" class="text-gray-600 hover:text-pink-500 px-3 py-2 text-sm font-medium transition duration-300">Login</a>
 
-            <!-- Botão mobile -->
-            <div class="md:hidden flex items-center">
-                <button class="outline-none mobile-menu-button">
-                    <i class="fas fa-bars text-pink-400 text-xl"></i>
-                </button>
-            </div>
-
-            <!-- Menu desktop -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#" class="text-pink-500 hover:text-pink-700 px-3 py-2 text-sm font-medium">Início</a>
-                <a href="#" class="text-gray-600 hover:text-pink-500 px-3 py-2 text-sm font-medium">Login</a>
-                <a href="#" class="text-gray-600 hover:text-pink-500 px-3 py-2 text-sm font-medium">Registro</a>
-                <a href="#" class="text-gray-600 hover:text-pink-500 px-3 py-2 text-sm font-medium">Diário</a>
-                <a href="#" class="text-gray-600 hover:text-pink-500 px-3 py-2 text-sm font-medium">Planner</a>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Mobile menu -->
-    <div class="mobile-menu hidden md:hidden bg-white shadow-lg rounded-b-lg">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#" class="block px-3 py-2 text-base font-medium text-pink-500 hover:bg-pink-50 rounded-md">Início</a>
-            <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-pink-50 rounded-md">Login</a>
-            <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-pink-50 rounded-md">Registro</a>
-            <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-pink-50 rounded-md">Diário</a>
-            <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-pink-50 rounded-md">Planner</a>
-        </div>
+  <!-- Mobile menu -->
+  <div class="mobile-menu hidden md:hidden bg-white shadow-lg rounded-b-lg">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="{% url 'home:home' %}" class="block px-3 py-2 text-base font-medium text-pink-500 hover:bg-pink-50 rounded-md">Início</a>
+      <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-pink-50 rounded-md">Diário</a>
+      <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-pink-50 rounded-md">Planner</a>
+      <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-pink-50 rounded-md">Registro</a>
+      <a href="{% url 'users:login' %}" class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-pink-50 rounded-md">Login</a>
     </div>
+  </div>
 </nav>

@@ -1,52 +1,36 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo Dia por Mim</title>
+    <title>Todo Dia por Mim - Seu espaço de autocuidado</title>
 
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fontes e ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Seu CSS -->
     <link rel="stylesheet" href="{% static 'global/css/global.css' %}">
 </head>
+<body class="text-gray-700">
+  <div class="flex flex-col min-h-screen">
 
-    <!-- Navbar fixa no topo -->
-    {% include "partials/navbar.html" %}
+    <!-- Header com navbar original -->
+    {% include "partials/header.html" %}
 
-<body class="text-gray-700 font-primary bg-gray-50">
-    
-    <!-- Conteúdo principal -->
-
-    <main class="pt-20 pb-12 flex-1">
-        <div>
-            {% block content %}
-            {% endblock %}
-        </div>
+    <!-- Main -->
+    <main class="flex-grow pt-[4.5rem] px-4 pb-12 max-w-6xl mx-auto w-full">
+      {% block content %}{% endblock %}
     </main>
-
-</body>
 
     <!-- Rodapé -->
     {% include "partials/footer.html" %}
+  </div>
 
-        <!-- Script do menu mobile -->
-    <script>
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-
-        mobileMenuButton?.addEventListener('click', () => {
-            mobileMenu?.classList.toggle('hidden');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu?.contains(e.target) && !mobileMenuButton?.contains(e.target)) {
-                mobileMenu?.classList.add('hidden');
-            }
-        });
-    </script>
-
-
+  <script src="{% static 'global/js/script_global.js' %}"></script>
+</body>
 </html>
